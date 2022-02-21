@@ -1,0 +1,1 @@
+/home/guest/dev/projects/pgolter-config/.vimrc
