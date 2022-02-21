@@ -1,0 +1,34 @@
+[user]
+	name = Paul Golter
+	email = paul@blender.org
+
+[color]
+	ui = auto 
+
+[pull]
+    rebase = true
+
+[push]
+    default = simple
+
+[alias]
+    co = "checkout"
+    cp = "cherry-pick"
+    ff = "merge --ff-only"
+    mt = "mergetool"
+    up = "checkout @~1"
+    st = "status --ignore-submodules=none"
+    car = "commit --amend --reset-author"
+    rbi = "rebase -i"
+    rbc = "rebase --continue"
+    rba = "rebase --abort"
+    tpush = "!git push && git push --tags"
+    out = "log @{u}.. --pretty=oneline"
+    head = "show HEAD"
+    unstash = "stash pop"
+    authors = "!f() { git log --since 'now - 1 year' \"$@\" | grep ^Author | sed 's/Author: //' | sed 's/<.*>//' | sort -f | uniq -ci | sort -nr | nl -s '' | sort -nr; } ; f"
+    glog = "log --all --graph --abbrev-commit --decorate --date=short --format=format:'%C(bold blue)%h%C(reset) %C(green)(%ad)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(dim magenta)%d%C(reset)'"
+    onelog = "log --abbrev-commit --decorate --date=short --format=format:'%C(bold blue)%h%C(reset) %C(green)(%ad)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(dim magenta)%d%C(reset)'"
+    ver = "log --oneline -n 1 --no-abbrev"
+
+
