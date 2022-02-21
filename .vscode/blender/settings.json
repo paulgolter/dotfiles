@@ -1,0 +1,39 @@
+{
+    "cmake.configureOnOpen": false,
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/../build_linux/compile_commands.json",
+    "folding": {
+        "c": {
+            "begin": "\\{",
+            "end": "\\}"
+        }
+    },
+    "files.associations": {
+        "type_traits": "cpp",
+        "core": "cpp",
+        "*.ipp": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "shared_mutex": "cpp",
+        "bli_string.h": "c",
+        "thread": "cpp",
+        "*.tcc": "cpp",
+        "mutex": "cpp",
+        "variant": "cpp",
+        "typeindex": "c",
+        "typeinfo": "c",
+        "cstdio": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "memory": "cpp",
+        "gpu_py_vertex_format.h": "c"
+    },
+    "cSpell.words": [
+        "androcto",
+        "idname",
+        "pitiwazou"
+    ],
+    "cmake.buildDirectory": "${workspaceFolder}/../build_linux",
+    "cmake.buildBeforeRun": false,
+    "cmake.copyCompileCommands": ""
+}

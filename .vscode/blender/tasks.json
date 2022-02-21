@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Blender Debug",
+            "type": "shell",
+            "command": "make debug developer ninja",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "options": {
+                "cwd": "${workspaceRoot}",
+            }
+        },
+        {
+            "label": "Build Blender Release",
+            "type": "shell",
+            "command": "make release ninja",
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": [],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            }
+        }
+    ]
+}
