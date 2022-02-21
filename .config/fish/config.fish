@@ -5,6 +5,9 @@ if status is-interactive
     end 
 end
 
+# Overwrite default greeting. 
+set fish_greeting
+
 # Blender shortcuts.
 function bdir
 	cd ~/dev/projects/blender-git/blender
