@@ -1,10 +1,13 @@
 " This enables terminal to use more then 16 colors. 
 set termguicolors
+set encoding=UTF-8
 
 " Plugins. 
 call plug#begin()
-
+" Make sure to install nerd-fonts on the system: https://github.com/ryanoasis/nerd-fonts#font-installation
 Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'neovim/nvim-lspconfig'
 
