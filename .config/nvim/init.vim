@@ -1,5 +1,10 @@
+" This enables terminal to use more then 16 colors. 
+set termguicolors
+
 " Plugins. 
 call plug#begin()
+
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'neovim/nvim-lspconfig'
 
@@ -39,4 +44,5 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
-
+" Colorscheme
+colorscheme dracula
