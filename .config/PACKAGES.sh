@@ -42,3 +42,4 @@ sudo apt install polybar
 # Dracula
 # https://draculatheme.com/gtk
 # Download GTK dracula theme: https://github.com/dracula/gtk/tags move to:  sudo mv Downloads/dracula-theme /usr/share/themes/
+# Download Wallpaper: https://draculatheme.com/wallpaper
