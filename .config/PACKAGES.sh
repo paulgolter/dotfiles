@@ -23,6 +23,8 @@ sudo apt install neofetch
 
 # Window manager
 sudo apt install i3
+sudo apt install rofi
+sudo apt install demenu
 
 # Window compositor
 sudo apt install compton
