@@ -14,6 +14,7 @@ LOGGING = {
         "requests": {"level": "INFO"},
         "urllib3": {"level": "CRITICAL"},
         "BSP": {"level": "DEBUG"},
+        "blender-kitsu": {"level": "INFO"},
     },
     "root": {
         "level": "INFO",
