@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -34,7 +34,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # Nitrogen 
-exec__always nitrogen --restore
+exec_always nitrogen --restore
 
 # Compton. 
 exec_always --no-startup-id compton --config ~/.config/compton.conf
@@ -142,7 +142,6 @@ bindsym $mod+0 workspace number $ws10
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
@@ -191,3 +190,14 @@ bar {
 }
 
 
+# DEFAULT BORDER
+for_window [class="^.*"] border pixel 1
+for_window [title="^.*"] border pixel 1
+
+# GAP VARIABLES
+set $inner 16
+set $outer 0
+
+# SET GAPS
+gaps inner $inner
+gaps outer $outer
