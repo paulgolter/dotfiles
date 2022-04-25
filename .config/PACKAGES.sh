@@ -22,7 +22,10 @@ sudo apt install kitty
 sudo apt install neofetch
 
 # Window manager
-sudo apt install i3
+sudo add-apt-repository ppa:regolith-linux/release
+sudo apt update
+sudo apt install i3-gaps
+
 sudo apt install rofi
 sudo apt install demenu
 
