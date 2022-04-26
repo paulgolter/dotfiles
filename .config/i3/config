@@ -36,8 +36,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # Nitrogen 
 exec_always nitrogen --restore
 
-# Compton. 
-exec_always --no-startup-id compton --config ~/.config/compton.conf
+# Picom. 
+exec_always --no-startup-id picom
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -192,6 +192,8 @@ bar {
         modifier none
 }
 
+# Touchpad tapping. 
+exec xinput set-prop 11 "libinput Tapping Enabled" 1
 
 # DEFAULT BORDER
 for_window [class="^.*"] border pixel 1
