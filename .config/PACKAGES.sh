@@ -40,6 +40,7 @@ sudo apt install polybar
 
 # Download Nerd Fonts.
 # git clone https://github.com/ryanoasis/nerd-fonts.git ~/dev/build/nerd-fonts
+# --> FiraCode Nerd Font Mono Regular
 
 # Gnome tweak
 # sudo apt install gnome-tweaks
