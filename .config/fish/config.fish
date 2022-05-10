@@ -2,10 +2,10 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     if type -q neofetch
         neofetch
-    end 
+    end
 end
 
-# Overwrite default greeting. 
+# Overwrite default greeting.
 set fish_greeting
 
 # Blender shortcuts.
@@ -29,9 +29,14 @@ end
 # Reference: https://www.atlassian.com/git/tutorials/dotfiles
 function config
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
-end 
+end
 
-# Configurate packages. 
+# Configurate packages.
 if type -q starship
     starship init fish | source
-end 
+end
+
+# Xlip Copy to clipboard shorcuts.
+function toclip
+    xclip -selection c
+end
