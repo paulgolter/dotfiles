@@ -116,6 +116,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias blender='/home/guest/dev/projects/blender-git/build_linux_release/bin/blender'
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
 
-alias blender_db='/home/guest/dev/projects/blender-git/build_linux_debug/bin/blender'
+# set PATH so it includes user's local bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
