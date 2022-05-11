@@ -37,8 +37,12 @@ if type -q starship
 end
 
 # Xlip Copy to clipboard shorcuts.
-function toclip
-    xclip -selection c
+function toclip -d "Copy to Clipboard"
+    xclip -selection c $argv
+end
+
+function fromclip -d "Paste from Clipboard"
+    xclip -selection c -o $argv
 end
 
 # Environment Variables
@@ -46,3 +50,4 @@ end
 if test -d ~/.local/bin
     contains ~/.local/bin $fish_user_paths; or set -Ua fish_user_paths ~/.local/bin
 end
+
