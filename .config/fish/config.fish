@@ -40,3 +40,9 @@ end
 function toclip
     xclip -selection c
 end
+
+# Environment Variables
+#Poetry
+if test -d ~/.local/bin
+    contains ~/.local/bin $fish_user_paths; or set -Ua fish_user_paths ~/.local/bin
+end
