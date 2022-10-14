@@ -1,9 +1,9 @@
 [user]
 	name = Paul Golter
-	email = paul@blender.org
+	email = paulgolter.de@gmail.com
 
 [color]
-	ui = auto 
+	ui = auto
 
 [pull]
     rebase = true
