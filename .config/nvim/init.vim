@@ -11,7 +11,10 @@ set mouse=a
 
 " Plugins. 
 call plug#begin()
-Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
+" Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -53,7 +56,7 @@ augroup highlight_yank
 augroup END
 
 " Colorscheme.
-colorscheme dracula
+colorscheme catppuccin-macchiato
 
 " CMP.
 lua <<EOF
@@ -116,9 +119,9 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 --- lua require'lspconfig'.clangd.setup{cmd = { "clangd", "--background-index", "--cross-file-rename", "--limit-results=0" }}
 require'lspconfig'.clangd.setup{
   cmd = { "clangd", "--background-index", "--cross-file-rename" },
-  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities),
+  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities),
   }
 require'lspconfig'.pylsp.setup{
-  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities),
+  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities),
 }
 EOF

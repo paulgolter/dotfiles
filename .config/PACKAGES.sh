@@ -42,6 +42,15 @@ sudo apt install polybar
 # THEMES AND FONTS
 # --------------------------
 
+# Papirus icons
+sudo add-apt-repository ppa:papirus/papirus
+sudo apt-get update
+sudo apt-get install papirus-icon-theme
+
+# Papirus change folder color
+sudo apt-get install papirus-folders
+papirus-folders -C palebrown
+
 # Download Nerd Fonts.
 # git clone https://github.com/ryanoasis/nerd-fonts.git ~/dev/build/nerd-fonts
 # --> FiraCode Nerd Font Mono Regular
@@ -53,3 +62,6 @@ sudo apt install polybar
 # https://draculatheme.com/gtk
 # Download GTK dracula theme: https://github.com/dracula/gtk/tags move to:  sudo mv Downloads/dracula-theme /usr/share/themes/
 # Download Wallpaper: https://draculatheme.com/wallpaper
+
+# Catppuccin
+# https://github.com/catppuccin/gtk
