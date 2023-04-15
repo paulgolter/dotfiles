@@ -51,3 +51,5 @@ if test -d ~/.local/bin
     contains ~/.local/bin $fish_user_paths; or set -Ua fish_user_paths ~/.local/bin
 end
 
+# Starship terminal prompt
+starship init fish | source

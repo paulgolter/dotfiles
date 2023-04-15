@@ -19,6 +19,10 @@ sudo apt install fish
 sudo apt install kitty
 # sudo update-alternatives --config x-terminal-emulator
 
+# Terminal prompt starship
+# https://github.com/starship/starship#-installation
+# curl -sS https://starship.rs/install.sh | sh
+
 sudo apt install neofetch
 
 # Window manager
