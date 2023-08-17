@@ -25,6 +25,9 @@ sudo apt install kitty
 
 sudo apt install neofetch
 
+# Exa (Rust version of ls)
+sudo apt install exa
+
 # Window manager
 sudo add-apt-repository ppa:regolith-linux/release
 sudo apt update

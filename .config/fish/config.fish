@@ -5,6 +5,11 @@ if status is-interactive
     end
 end
 
+# ALIASES
+alias ls="exa"
+alias ll="exa -alh"
+alias tree="exa --tree"
+
 # Overwrite default greeting.
 set fish_greeting
 
