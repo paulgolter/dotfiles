@@ -57,4 +57,6 @@ if test -d ~/.local/bin
 end
 
 # Starship terminal prompt
-starship init fish | source
+if command -v starship
+    starship init fish | source
+end
