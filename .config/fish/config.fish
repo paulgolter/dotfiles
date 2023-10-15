@@ -61,3 +61,8 @@ end
 if command -v starship
     starship init fish | source
 end
+
+# Call .fishrc if exists in $HOME dir
+if test -e ~/.fishrc
+    source ~/.fishrc
+end
