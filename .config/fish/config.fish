@@ -9,6 +9,7 @@ end
 alias ls="exa"
 alias ll="exa -alh"
 alias tree="exa --tree"
+alias cat="bat -p"
 
 # Overwrite default greeting.
 set fish_greeting

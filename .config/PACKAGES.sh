@@ -28,6 +28,9 @@ sudo apt install neofetch
 # Exa (Rust version of ls)
 sudo apt install exa
 
+# Bat (Nicer version of cat)
+sudo apt install bat
+
 # Window manager
 sudo add-apt-repository ppa:regolith-linux/release
 sudo apt update
