@@ -31,6 +31,12 @@ sudo apt install exa
 # Bat (Nicer version of cat)
 sudo apt install bat
 
+# diff-so-fancy
+sudo apt install diff-so-fancy
+
+# To replace the git-diff command:
+# https://github.com/so-fancy/diff-so-fancy#with-git
+
 # Window manager
 sudo add-apt-repository ppa:regolith-linux/release
 sudo apt update
