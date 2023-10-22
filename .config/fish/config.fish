@@ -10,6 +10,7 @@ alias ls="exa"
 alias ll="exa -alh"
 alias tree="exa --tree"
 alias cat="bat -p"
+alias vim="nvim"
 
 # Overwrite default greeting.
 set fish_greeting
