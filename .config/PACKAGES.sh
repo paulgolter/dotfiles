@@ -66,6 +66,7 @@ papirus-folders -C palebrown
 # Download Nerd Fonts.
 # git clone https://github.com/ryanoasis/nerd-fonts.git ~/dev/build/nerd-fonts
 # --> FiraCode Nerd Font Mono Regular
+# --> JetBrainsMono
 
 # Gnome tweak
 # sudo apt install gnome-tweaks
