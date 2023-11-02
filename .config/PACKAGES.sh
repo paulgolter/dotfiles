@@ -31,6 +31,18 @@ sudo apt install exa
 # Bat (Nicer version of cat)
 sudo apt install bat
 
+# Nice command line performance monitor
+sudo apt install btop
+
+# Command line tool for fuzzy searching files
+sudo apt install fzf
+
+# Midnight commander 
+sudo apt install mc
+
+# Ripgrep, faster then grep more features
+sudo apt install ripgrep
+
 # diff-so-fancy
 sudo apt install diff-so-fancy
 
