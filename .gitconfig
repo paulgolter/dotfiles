@@ -11,6 +11,9 @@
 [push]
     default = simple
 
+[merge]
+    autostash = true
+    
 [alias]
     co = "checkout"
     cp = "cherry-pick"
