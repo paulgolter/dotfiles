@@ -12,6 +12,9 @@ alias tree="exa --tree"
 alias cat="bat -p"
 alias vim="nvim"
 
+# Autocomplete shortcut
+bind \cf forward-char
+
 # Overwrite default greeting.
 set fish_greeting
 
