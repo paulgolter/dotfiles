@@ -7,6 +7,7 @@ sudo apt install neovim
 # Install language servers.
 sudo apt install clang
 sudo apt install clangd
+
 # Python language server for vim.
 sudo snap install pylsp
 
@@ -14,6 +15,7 @@ sudo snap install pylsp
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt-get update
 sudo apt install fish
+# chsh -s $(which fish)
 
 # Terminal Emulator
 sudo apt install kitty
@@ -30,6 +32,9 @@ sudo apt install exa
 
 # Bat (Nicer version of cat)
 sudo apt install bat
+# Might be necesaary on some distros:
+# mkdir -p ~/.local/bin
+# ln -s /usr/bin/batcat ~/.local/bin/bat
 
 # Nice command line performance monitor
 sudo apt install btop
@@ -37,7 +42,7 @@ sudo apt install btop
 # Command line tool for fuzzy searching files
 sudo apt install fzf
 
-# Midnight commander 
+# Midnight commander
 sudo apt install mc
 
 # Ripgrep, faster then grep more features
