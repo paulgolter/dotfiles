@@ -54,3 +54,8 @@ winget install -e --id BlenderFoundation.Blender
 # SideFX Launcher
 # Adobe Creative Cloud
 
+# Themes
+# ----------------------------------
+
+# Terminal catppuccin theme
+# https://github.com/catppuccin/windows-terminal

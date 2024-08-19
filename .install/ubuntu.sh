@@ -1,8 +1,16 @@
+# Setup git bare repository
+# https://www.atlassian.com/git/tutorials/dotfiles
+# echo ".cfg" >> .gitignore
+# git clone --bare git@github.com:paulgolter/dotfiles.git $HOME/.cfg
+# alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# config checkout
+# config config --local status.showUntrackedFiles no
+
+
 # Neovim
 sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt-get update
-sudo apt-get install neovim
-sudo apt install neovim
+sudo apt update
+sudo apt install neovim -y
 
 # Install language servers.
 sudo apt install clang
@@ -13,8 +21,8 @@ sudo snap install pylsp
 
 # Fish shell
 sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt-get update
-sudo apt install fish
+sudo apt update
+sudo apt install fish -y
 # chsh -s $(which fish)
 
 # Terminal Emulator
@@ -25,31 +33,32 @@ sudo apt install kitty
 # https://github.com/starship/starship#-installation
 # curl -sS https://starship.rs/install.sh | sh
 
-sudo apt install neofetch
+sudo apt install neofetch -y
 
 # Exa (Rust version of ls)
-sudo apt install exa
+sudo apt install exa -y
 
 # Bat (Nicer version of cat)
-sudo apt install bat
+sudo apt install bat -y
 # Might be necesaary on some distros:
 # mkdir -p ~/.local/bin
 # ln -s /usr/bin/batcat ~/.local/bin/bat
 
 # Nice command line performance monitor
-sudo apt install btop
+sudo apt install btop -y
 
 # Command line tool for fuzzy searching files
-sudo apt install fzf
+sudo apt install fzf -y
 
 # Midnight commander
-sudo apt install mc
+sudo apt install mc -y
 
 # Ripgrep, faster then grep more features
-sudo apt install ripgrep
+sudo apt install ripgrep -y
 
 # diff-so-fancy
-sudo apt install diff-so-fancy
+# sudo apt install diff-so-fancy -y
+sudo snap install diff-so-fancy -y
 
 # To replace the git-diff command:
 # https://github.com/so-fancy/diff-so-fancy#with-git
@@ -67,6 +76,12 @@ sudo apt install compton
 
 # Bars
 sudo apt install polybar
+
+# Docker
+# https://docs.docker.com/engine/install/ubuntu
+# For vscode docker wsl integration:
+# https://docs.docker.com/engine/install/linux-postinstall
+
 
 # THEMES AND FONTS
 # --------------------------
