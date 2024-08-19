@@ -1,4 +1,5 @@
 # Put this file in: $profile (%USERPFOFILE%\Documents\PowerShell\Microsoft.PowerShell_profile.ps1)
+Import-Module posh-git
 Import-Module PSReadLine
 
 # Shows navigable menu of all options when hitting Tab
