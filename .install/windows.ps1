@@ -42,6 +42,10 @@ wsl --install
 # Blender
 winget install -e --id BlenderFoundation.Blender
 
+# Setup ssh-keys
+# Setup ssh-agent: https://www.notion.so/SSH-454e27eec5ee4a2e987bf306b7965b61
+# Setup gitconfig
+
 # Path Copy
 # https://github.com/clechasseur/pathcopycopy/releases
 
@@ -49,3 +53,4 @@ winget install -e --id BlenderFoundation.Blender
 # Autodesk Access
 # SideFX Launcher
 # Adobe Creative Cloud
+
