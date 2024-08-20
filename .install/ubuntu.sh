@@ -82,6 +82,8 @@ sudo apt install polybar
 # For vscode docker wsl integration:
 # https://docs.docker.com/engine/install/linux-postinstall
 
+# Ffmpeg
+sudo apt install ffmpeg
 
 # THEMES AND FONTS
 # --------------------------
