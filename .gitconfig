@@ -2,6 +2,9 @@
 	name = Paul Golter
 	email = paulgolter.de@gmail.com
 
+[init]
+    defaultBranch = main
+    
 [color]
 	ui = true
 
