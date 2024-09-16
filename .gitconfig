@@ -22,6 +22,7 @@
     co = "checkout"
     cp = "cherry-pick"
     ff = "merge --ff-only"
+    fa = "fetch --all"
     mt = "mergetool"
     up = "checkout @~1"
     st = "status --ignore-submodules=none"
