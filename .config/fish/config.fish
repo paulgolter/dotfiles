@@ -6,9 +6,9 @@ if status is-interactive
 end
 
 # ALIASES
-alias ls="exa"
-alias ll="exa -alh"
-alias tree="exa --tree"
+# alias ls="exa"
+# alias ll="exa -alh"
+# alias tree="exa --tree"
 alias cat="bat -p"
 alias vim="nvim"
 
