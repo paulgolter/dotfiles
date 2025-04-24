@@ -1,0 +1,2 @@
+eval (ssh-agent -c)
+eval (keychain --eval --agents ssh github.com gitlab.com)
