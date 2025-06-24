@@ -9,7 +9,7 @@ end
 # alias ls="exa"
 # alias ll="exa -alh"
 # alias tree="exa --tree"
-alias cat="bat -p"
+# alias cat="bat -p"
 alias vim="nvim"
 
 # Autocomplete shortcut
