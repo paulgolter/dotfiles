@@ -1,2 +1,4 @@
-eval (ssh-agent -c)
-eval (keychain --eval --agents ssh github.com gitlab.com)
+if status --is-interactive
+    eval (ssh-agent -c)
+    eval (keychain --eval --agents ssh github.com gitlab.com)
+end
