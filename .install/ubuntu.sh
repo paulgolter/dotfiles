@@ -100,6 +100,15 @@ sudo apt-get install papirus-icon-theme
 sudo apt-get install papirus-folders
 papirus-folders -C palebrown
 
+# pyenv
+# https://github.com/pyenv/pyenv
+sudo apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+curl -fsSL https://pyenv.run | bash
+
+set -Ux PYENV_ROOT $HOME/.pyenv
+test -d $PYENV_ROOT/bin; and fish_add_path $PYENV_ROOT/bin
+
 # Download Nerd Fonts.
 # git clone https://github.com/ryanoasis/nerd-fonts.git ~/dev/build/nerd-fonts
 # --> FiraCode Nerd Font Mono Regular
