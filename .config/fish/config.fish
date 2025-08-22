@@ -37,8 +37,31 @@ end
 
 # Config alias which lets us access dotfiles git repo
 # Reference: https://www.atlassian.com/git/tutorials/dotfiles
-function config
-    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
+# Define the config function (if .cfg exists)
+if test -d $HOME/.cfg
+    function config
+        /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
+    end
+end
+
+# Function to bootstrap dotfiles repo
+function cloneconfig
+    if test -d $HOME/.cfg
+        echo "Dotfiles repo already exists at $HOME/.cfg"
+    else
+        echo "Cloning dotfiles repo..."
+        git clone --bare git@github.com:paulgolter/dotfiles.git $HOME/.cfg
+        echo "Dotfiles repo cloned."
+
+        # Define config function immediately
+        function config
+            /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
+        end
+
+        # Hide untracked files in status
+        config config --local status.showUntrackedFiles no
+        echo "'config' command is now available."
+    end
 end
 
 # Configurate packages.
@@ -75,3 +98,4 @@ end
 if test -e ~/.fishrc
     source ~/.fishrc
 end
+
