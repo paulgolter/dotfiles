@@ -12,8 +12,9 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install neovim -y
 
-# Open neovim and run
-# :PlugInstall
+# Open neovim and run :MasonInstallAl
+# https://nvchad.com/docs/quickstart/install
+
 
 # Install language servers.
 sudo apt install clang
