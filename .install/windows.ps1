@@ -51,6 +51,9 @@ Install-Module posh-git -Scope CurrentUser -Force -AllowClobber -AllowPrerelease
 # ffmpeg 
 choco install ffmpeg
 
+# Nvm for windows 
+https://github.com/coreybutler/nvm-windows/releases
+
 # Setup ssh-keys
 # Setup ssh-agent: https://www.notion.so/SSH-454e27eec5ee4a2e987bf306b7965b61
 # Setup gitconfig
@@ -67,4 +70,5 @@ choco install ffmpeg
 # ----------------------------------
 
 # Terminal catppuccin theme
+
 # https://github.com/catppuccin/windows-terminal
