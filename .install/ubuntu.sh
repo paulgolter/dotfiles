@@ -6,6 +6,8 @@
 # config checkout
 # config config --local status.showUntrackedFiles no
 
+# Keychain 
+sudo apt install keychain
 
 # Neovim
 sudo add-apt-repository ppa:neovim-ppa/unstable
