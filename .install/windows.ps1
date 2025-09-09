@@ -53,6 +53,8 @@ choco install ffmpeg
 
 # Nvm for windows 
 https://github.com/coreybutler/nvm-windows/releases
+nvm install 20
+nvm use 20
 
 # Setup ssh-keys
 # Setup ssh-agent: https://www.notion.so/SSH-454e27eec5ee4a2e987bf306b7965b61
@@ -72,3 +74,4 @@ https://github.com/coreybutler/nvm-windows/releases
 # Terminal catppuccin theme
 
 # https://github.com/catppuccin/windows-terminal
+
