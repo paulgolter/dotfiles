@@ -16,8 +16,7 @@
 # across sessions for github.com and gitlab.com keys.
 # ──────────────────────────────────────────────────────
 
-eval $(ssh-agent -s)
-eval $(keychain --eval --agents ssh github.com gitlab.com)
+eval "$(keychain --eval --agents ssh github.com gitlab.com)"
 
 # ──────────────────────────────────────────────────────
 # ALIASES
@@ -44,7 +43,7 @@ bind '"\C-f": forward-char'
 # Reference: https://www.atlassian.com/git/tutorials/dotfiles
 if [[ -d "$HOME/.cfg" ]]; then
     config() {
-        /usr/bin/git --git-dir="$HOME/.cfg/" --work-tree="$HOME" "$@"
+        git --git-dir="$HOME/.cfg/" --work-tree="$HOME" "$@"
     }
 fi
 
@@ -58,7 +57,7 @@ cloneconfig() {
         echo "Dotfiles repo cloned."
 
         config() {
-            /usr/bin/git --git-dir="$HOME/.cfg/" --work-tree="$HOME" "$@"
+            git --git-dir="$HOME/.cfg/" --work-tree="$HOME" "$@"
         }
 
         config config --local status.showUntrackedFiles no

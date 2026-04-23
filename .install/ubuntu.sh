@@ -1,3 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
 # Setup git bare repository
 # https://www.atlassian.com/git/tutorials/dotfiles
 # echo ".cfg" >> .gitignore
@@ -6,7 +9,7 @@
 # config checkout
 # config config --local status.showUntrackedFiles no
 
-# Keychain 
+# Keychain
 sudo apt install keychain
 
 # Neovim
@@ -78,7 +81,7 @@ sudo apt install rofi
 sudo apt install demenu
 
 # Window compositor
-sudo apt install compton
+sudo apt install picom
 
 # Bars
 sudo apt install polybar
@@ -108,9 +111,7 @@ papirus-folders -C palebrown
 sudo apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 curl -fsSL https://pyenv.run | bash
-
-set -Ux PYENV_ROOT $HOME/.pyenv
-test -d $PYENV_ROOT/bin; and fish_add_path $PYENV_ROOT/bin
+# After install, restart your shell or source ~/.bash_profile to activate pyenv.
 
 # Download Nerd Fonts.
 # git clone https://github.com/ryanoasis/nerd-fonts.git ~/dev/build/nerd-fonts

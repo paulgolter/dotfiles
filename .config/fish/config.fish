@@ -68,9 +68,7 @@ if test -d ~/.local/bin
 end
 
 # Starship terminal prompt
-if command -v starship
-    starship init fish | source
-end
+# (kept here; duplicate block below was removed)
 
 # Pyenv
 if command -v pyenv
