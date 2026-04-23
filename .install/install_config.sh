@@ -3,7 +3,7 @@
 # Reference: https://www.atlassian.com/git/tutorials/dotfiles
 #
 # Usage:
-#   sh ~/.install/clone_config.sh
+#   sh ~/.install/install_config.sh
 #
 # What this script does:
 #   1. Clones the bare dotfiles repo to ~/.cfg (skips if already present)

@@ -1,5 +1,5 @@
 # ~/.bashrc_cfg — Bash interactive shell configuration
-# Sourced from ~/.bashrc via a line added by .install/clone_config.sh
+# Sourced from ~/.bashrc via a line added by .install/install_config.sh
 # Ported from fish shell config (.config/fish/config.fish + .fishrc_cfg)
 
 # Only run for interactive shells

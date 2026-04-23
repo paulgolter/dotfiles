@@ -6,9 +6,9 @@ set -euo pipefail
 #
 #   xcode-select --install        # ensures git is available
 #   git clone --bare git@github.com:paulgolter/dotfiles.git ~/.cfg
-#   sh ~/.install/clone_config.sh
+#   sh ~/.install/install_config.sh
 #
-# clone_config.sh checks out all dotfiles, backs up any conflicts, and
+# install_config.sh checks out all dotfiles, backs up any conflicts, and
 # wires up ~/.bashrc / ~/.bash_profile / ~/.zprofile to source the _cfg files.
 # ─────────────────────────────────────────────────────────────────────────────
 
