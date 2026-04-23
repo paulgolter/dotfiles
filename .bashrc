@@ -40,23 +40,6 @@ bind '"\C-f": forward-char'
 # FUNCTIONS
 # ──────────────────────────────────────────────────────
 
-# Blender shortcuts
-bdir() {
-    cd ~/dev/projects/blender-git/blender
-}
-
-bconfig() {
-    cd ~/.config/blender
-}
-
-bscripts() {
-    cd ~/.config/blender/3.2/scripts
-}
-
-baddons() {
-    cd ~/.config/blender/3.2/scripts/addons
-}
-
 # Config alias for dotfiles bare git repository
 # Reference: https://www.atlassian.com/git/tutorials/dotfiles
 if [[ -d "$HOME/.cfg" ]]; then
@@ -90,13 +73,6 @@ toclip() {
 
 fromclip() {
     xclip -selection c -o "$@"
-}
-
-# Copy Blender user preferences to the blender-studio-tools project
-mvcpuserpref() {
-    cp ~/.config/blender/3.1/config/blender_media_viewer/userpref.blend \
-        ~/dev/projects/blender-studio-tools/blender-media-viewer/blender_media_viewer/userpref.blend
-    rm -R ~/.config/blender/3.1/config/blender_media_viewer
 }
 
 # ──────────────────────────────────────────────────────

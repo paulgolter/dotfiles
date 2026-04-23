@@ -18,23 +18,6 @@ bind \cf forward-char
 # Overwrite default greeting.
 set fish_greeting
 
-# Blender shortcuts.
-function bdir
-	cd ~/dev/projects/blender-git/blender
-end
-
-function bconfig
-	cd ~/.config/blender
-end
-
-function bscripts
-	cd ~/.config/blender/3.2/scripts
-end
-
-function baddons
-	cd ~/.config/blender/3.2/scripts/addons
-end
-
 # Config alias which lets us access dotfiles git repo
 # Reference: https://www.atlassian.com/git/tutorials/dotfiles
 # Define the config function (if .cfg exists)
