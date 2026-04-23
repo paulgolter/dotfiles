@@ -42,10 +42,10 @@ sudo apt install kitty
 # https://github.com/starship/starship#-installation
 # curl -sS https://starship.rs/install.sh | sh
 
-sudo apt install neofetch -y
+sudo apt install fastfetch -y
 
-# Exa (Rust version of ls)
-sudo apt install exa -y
+# Eza (actively maintained fork of archived exa)
+sudo apt install eza -y
 
 # Bat (Nicer version of cat)
 sudo apt install bat -y
@@ -72,10 +72,8 @@ sudo snap install diff-so-fancy
 # To replace the git-diff command:
 # https://github.com/so-fancy/diff-so-fancy#with-git
 
-# Window manager
-sudo add-apt-repository ppa:regolith-linux/release
-sudo apt update
-sudo apt install i3-gaps
+# Window manager (gap support built into i3 since v4.22)
+sudo apt install i3
 
 sudo apt install rofi
 sudo apt install dmenu

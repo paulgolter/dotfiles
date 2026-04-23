@@ -22,9 +22,9 @@ eval "$(keychain --eval --agents ssh github.com gitlab.com)"
 # ALIASES
 # ──────────────────────────────────────────────────────
 
-# alias ls="exa"
-# alias ll="exa -alh"
-# alias tree="exa --tree"
+# alias ls="eza"
+# alias ll="eza -alh"
+# alias tree="eza --tree"
 # alias cat="bat -p"
 alias vim="nvim"
 
@@ -92,4 +92,4 @@ fi
 # STARTUP
 # ──────────────────────────────────────────────────────
 
-command -v neofetch &>/dev/null && neofetch
+command -v fastfetch &>/dev/null && fastfetch

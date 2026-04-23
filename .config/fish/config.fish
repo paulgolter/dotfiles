@@ -1,14 +1,14 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    if type -q neofetch
-        neofetch
+    if type -q fastfetch
+        fastfetch
     end
 end
 
 # ALIASES
-# alias ls="exa"
-# alias ll="exa -alh"
-# alias tree="exa --tree"
+# alias ls="eza"
+# alias ll="eza -alh"
+# alias tree="eza --tree"
 # alias cat="bat -p"
 alias vim="nvim"
 
