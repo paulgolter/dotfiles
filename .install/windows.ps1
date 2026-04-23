@@ -1,7 +1,7 @@
 # Install latest power shell
 winget install --id Microsoft.Powershell --source winget
 
-# Install 'Windows Terminal' from store 
+# Install 'Windows Terminal' from store
 # https://apps.microsoft.com/detail/9n0dx20hk701?rtc=1&hl=de-de&gl=DE
 
 # Install pyenv
@@ -21,20 +21,20 @@ iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 scoop install pipx
 pipx ensurepath
 
-# Poetry 
+# Poetry
 pipx install poetry
 pipx ensurepath
 
-# Vscode 
+# Vscode
 winget install -e --id Microsoft.VisualStudioCode
 
-# Git 
+# Git
 winget install -e --id Git.Git
 
 # Neovim
-winget install Neovim.Neovim
+winget install -e --id Neovim.Neovim
 
-# WSL 
+# WSL
 # Open a admin power shell and run
 wsl --install
 # --> needs reboot
@@ -42,17 +42,18 @@ wsl --install
 # Blender
 winget install -e --id BlenderFoundation.Blender
 
-# Git autcomplete for powershell 
+# Git autcomplete for powershell
 # https://github.com/dahlbyk/posh-git
 Install-Module posh-git -Scope CurrentUser -Force -AllowClobber -AllowPrerelease
 
 # Setup powershell profle, copy from .config/windows
 
-# ffmpeg 
+# ffmpeg
 choco install ffmpeg
 
-# Nvm for windows 
-https://github.com/coreybutler/nvm-windows/releases
+# Nvm for windows
+# https://github.com/coreybutler/nvm-windows/releases
+winget install -e --id CoreyButler.NVMforWindows
 nvm install 20
 nvm use 20
 

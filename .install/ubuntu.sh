@@ -67,7 +67,7 @@ sudo apt install ripgrep -y
 
 # diff-so-fancy
 # sudo apt install diff-so-fancy -y
-sudo snap install diff-so-fancy -y
+sudo snap install diff-so-fancy
 
 # To replace the git-diff command:
 # https://github.com/so-fancy/diff-so-fancy#with-git
@@ -78,7 +78,7 @@ sudo apt update
 sudo apt install i3-gaps
 
 sudo apt install rofi
-sudo apt install demenu
+sudo apt install dmenu
 
 # Window compositor
 sudo apt install picom
