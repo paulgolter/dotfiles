@@ -17,7 +17,10 @@
 # across sessions for github.com and gitlab.com keys.
 # ──────────────────────────────────────────────────────
 
-eval "$(keychain --eval --agents ssh github.com gitlab.com)"
+# keychain manages ssh-agent reuse across sessions.
+# SHELL is overridden to bash because keychain uses $SHELL to decide output
+# syntax; if launched from fish, it would otherwise output fish set commands.
+eval "$(SHELL=/bin/bash keychain --eval --agents ssh github.com gitlab.com)"
 
 # ──────────────────────────────────────────────────────
 # ALIASES
