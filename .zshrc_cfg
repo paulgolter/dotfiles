@@ -1,9 +1,6 @@
-# ~/.bashrc_cfg — Bash-specific interactive shell configuration
-# Sourced from ~/.bashrc via a line added by .install/install_config.sh
+# ~/.zshrc_cfg — Zsh-specific interactive shell configuration
+# Sourced from ~/.zshrc via a line added by .install/install_config.sh
 # Shared config (aliases, functions, PATH, keychain) lives in .shellrc_cfg
-
-# Only run for interactive shells
-[[ $- != *i* ]] && return
 
 # ──────────────────────────────────────────────────────
 # SHARED CONFIG
@@ -12,22 +9,22 @@
 [[ -f "$HOME/.shellrc_cfg" ]] && source "$HOME/.shellrc_cfg"
 
 # ──────────────────────────────────────────────────────
-# READLINE (bash-specific)
+# KEY BINDINGS (zsh-specific)
 # ──────────────────────────────────────────────────────
 
 # Ctrl+F: accept the next character of the current suggestion (like fish)
-bind '"\C-f": forward-char'
+bindkey '\C-f' forward-char
 
 # ──────────────────────────────────────────────────────
-# TOOL INITIALISATION (bash-specific)
+# TOOL INITIALISATION (zsh-specific)
 # ──────────────────────────────────────────────────────
 
 # Pyenv
 if command -v pyenv &>/dev/null; then
-    eval "$(pyenv init - bash)"
+    eval "$(pyenv init - zsh)"
 fi
 
 # Starship prompt
 if command -v starship &>/dev/null; then
-    eval "$(starship init bash)"
+    eval "$(starship init zsh)"
 fi

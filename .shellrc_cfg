@@ -1,0 +1,61 @@
+# ~/.shellrc_cfg — Shared interactive shell configuration
+# Sourced by both .bashrc_cfg and .zshrc_cfg.
+# Contains only POSIX-compatible or universally supported constructs.
+
+# ──────────────────────────────────────────────────────
+# PATH
+# ──────────────────────────────────────────────────────
+
+[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
+
+# ──────────────────────────────────────────────────────
+# SSH AGENT
+# keychain manages ssh-agent reuse across sessions.
+# SHELL is overridden explicitly so keychain outputs POSIX export statements
+# regardless of which shell launched this session (e.g. fish).
+# ──────────────────────────────────────────────────────
+
+eval "$(SHELL=/bin/sh keychain --eval --agents ssh github.com gitlab.com)"
+
+# ──────────────────────────────────────────────────────
+# ALIASES
+# ──────────────────────────────────────────────────────
+
+# alias ls="eza"
+# alias ll="eza -alh"
+# alias tree="eza --tree"
+# alias cat="bat -p"
+alias vim="nvim"
+
+# ──────────────────────────────────────────────────────
+# FUNCTIONS
+# ──────────────────────────────────────────────────────
+
+# Config alias for dotfiles bare git repository
+# Reference: https://www.atlassian.com/git/tutorials/dotfiles
+if [[ -d "$HOME/.cfg" ]]; then
+    config() {
+        git --git-dir="$HOME/.cfg/" --work-tree="$HOME" "$@"
+    }
+fi
+
+# Bootstrap dotfiles repo on a new machine
+# Full logic lives in .install/install_config.sh
+cloneconfig() {
+    sh "$HOME/.install/install_config.sh"
+}
+
+# Clipboard shortcuts (requires xclip)
+toclip() {
+    xclip -selection c "$@"
+}
+
+fromclip() {
+    xclip -selection c -o "$@"
+}
+
+# ──────────────────────────────────────────────────────
+# STARTUP
+# ──────────────────────────────────────────────────────
+
+command -v fastfetch &>/dev/null && fastfetch

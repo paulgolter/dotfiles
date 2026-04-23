@@ -69,9 +69,13 @@ append_if_missing "$HOME/.bashrc" \
 append_if_missing "$HOME/.bash_profile" \
     '[ -f ~/.bash_profile_cfg ] && . ~/.bash_profile_cfg'
 
+# Zsh — interactive shell
+append_if_missing "$HOME/.zshrc" \
+    '[ -f ~/.zshrc_cfg ] && . ~/.zshrc_cfg'
+
 # Zsh — login shell (macOS)
 append_if_missing "$HOME/.zprofile" \
     '[ -f ~/.zprofile_cfg ] && . ~/.zprofile_cfg'
 
 echo ""
-echo "Done! Restart your shell or run: . ~/.bashrc"
+echo "Done! Restart your shell or run: . ~/.bashrc  (bash) / . ~/.zshrc  (zsh)"
