@@ -48,12 +48,6 @@ if [[ -d "$HOME/.cfg" ]]; then
     }
 fi
 
-# Bootstrap dotfiles repo on a new machine
-# Full logic lives in .install/clone_config.sh
-cloneconfig() {
-    sh "$HOME/.install/clone_config.sh"
-}
-
 # Clipboard shortcuts (requires xclip)
 toclip() {
     xclip -selection c "$@"

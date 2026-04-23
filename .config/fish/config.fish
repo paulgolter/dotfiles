@@ -27,11 +27,6 @@ if test -d $HOME/.cfg
     end
 end
 
-# Function to bootstrap dotfiles repo
-# Full logic lives in .install/clone_config.sh
-function cloneconfig
-    sh $HOME/.install/clone_config.sh
-end
 
 # Configurate packages.
 if type -q starship
