@@ -1,6 +1,17 @@
 #!/bin/bash
 set -euo pipefail
 
+# ── Step 0: Bootstrap dotfiles ────────────────────────────────────────────────
+# Run this before anything else to deploy your shell configs.
+#
+#   sudo apt install git
+#   git clone --bare git@github.com:paulgolter/dotfiles.git ~/.cfg
+#   sh ~/.install/clone_config.sh
+#
+# clone_config.sh checks out all dotfiles, backs up any conflicts, and
+# wires up ~/.bashrc / ~/.bash_profile / ~/.zprofile to source the _cfg files.
+# ─────────────────────────────────────────────────────────────────────────────
+
 # Setup git bare repository
 # https://www.atlassian.com/git/tutorials/dotfiles
 # echo ".cfg" >> .gitignore

@@ -1,5 +1,6 @@
-# ~/.bashrc — Bash interactive shell configuration
-# Ported from fish shell config (.config/fish/config.fish + .fishrc)
+# ~/.bashrc_cfg — Bash interactive shell configuration
+# Sourced from ~/.bashrc via a line added by .install/clone_config.sh
+# Ported from fish shell config (.config/fish/config.fish + .fishrc_cfg)
 
 # Only run for interactive shells
 [[ $- != *i* ]] && return
@@ -48,21 +49,9 @@ if [[ -d "$HOME/.cfg" ]]; then
 fi
 
 # Bootstrap dotfiles repo on a new machine
+# Full logic lives in .install/clone_config.sh
 cloneconfig() {
-    if [[ -d "$HOME/.cfg" ]]; then
-        echo "Dotfiles repo already exists at $HOME/.cfg"
-    else
-        echo "Cloning dotfiles repo..."
-        git clone --bare git@github.com:paulgolter/dotfiles.git "$HOME/.cfg"
-        echo "Dotfiles repo cloned."
-
-        config() {
-            git --git-dir="$HOME/.cfg/" --work-tree="$HOME" "$@"
-        }
-
-        config config --local status.showUntrackedFiles no
-        echo "'config' command is now available."
-    fi
+    sh "$HOME/.install/clone_config.sh"
 }
 
 # Clipboard shortcuts (requires xclip)

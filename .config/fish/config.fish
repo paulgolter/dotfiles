@@ -23,28 +23,14 @@ set fish_greeting
 # Define the config function (if .cfg exists)
 if test -d $HOME/.cfg
     function config
-        /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
+        git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
     end
 end
 
 # Function to bootstrap dotfiles repo
+# Full logic lives in .install/clone_config.sh
 function cloneconfig
-    if test -d $HOME/.cfg
-        echo "Dotfiles repo already exists at $HOME/.cfg"
-    else
-        echo "Cloning dotfiles repo..."
-        git clone --bare git@github.com:paulgolter/dotfiles.git $HOME/.cfg
-        echo "Dotfiles repo cloned."
-
-        # Define config function immediately
-        function config
-            /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
-        end
-
-        # Hide untracked files in status
-        config config --local status.showUntrackedFiles no
-        echo "'config' command is now available."
-    end
+    sh $HOME/.install/clone_config.sh
 end
 
 # Configurate packages.
@@ -75,8 +61,8 @@ if command -v pyenv
     pyenv init - fish | source
 end
 
-# Call .fishrc if exists in $HOME dir
-if test -e ~/.fishrc
-    source ~/.fishrc
+# Call .fishrc_cfg if exists in $HOME dir
+if test -e ~/.fishrc_cfg
+    source ~/.fishrc_cfg
 end
 
