@@ -1,6 +1,7 @@
 # ~/.zshrc_cfg — Zsh-specific interactive shell configuration
 # Sourced from ~/.zshrc via a line added by .install/install_config.sh
 # Shared config (aliases, functions, PATH, keychain) lives in .shellrc_cfg
+# Section order mirrors .bashrc_cfg.
 
 # ──────────────────────────────────────────────────────
 # SHARED CONFIG

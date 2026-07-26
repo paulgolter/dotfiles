@@ -1,7 +1,19 @@
-# ~/.bash_profile — Bash login shell configuration
+# ~/.bash_profile_cfg — Bash login shell configuration
+# Sourced from ~/.bash_profile via a line added by .install/install_config.sh
 #
 # On Linux, login shells do NOT source ~/.bashrc automatically.
 # This file bridges that gap and handles login-only setup.
+# Section order mirrors .zprofile_cfg.
+
+# ──────────────────────────────────────────────────────
+# macOS: Homebrew (only when running on macOS)
+# Must come first so brew-installed tools (starship,
+# keychain, ...) are on PATH for everything below.
+# ──────────────────────────────────────────────────────
+
+if [[ -x "/opt/homebrew/bin/brew" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # ──────────────────────────────────────────────────────
 # Pyenv — login-shell PATH setup
@@ -13,18 +25,14 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d "$PYENV_ROOT/bin" ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
 # ──────────────────────────────────────────────────────
-# macOS: Homebrew (only when running on macOS)
-# Must come before sourcing .bashrc so brew-installed
-# tools (starship, keychain, ...) are on PATH when
-# .bashrc_cfg initialises them.
+# PATH
 # ──────────────────────────────────────────────────────
 
-if [[ -x "/opt/homebrew/bin/brew" ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
 
 # ──────────────────────────────────────────────────────
 # Source .bashrc for interactive configuration
+# (bash-only: zsh sources .zshrc automatically)
 # ──────────────────────────────────────────────────────
 
 [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"

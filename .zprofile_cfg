@@ -1,10 +1,21 @@
 # ~/.zprofile_cfg — Zsh login shell configuration
 # Sourced from ~/.zprofile via a line added by .install/install_config.sh
+# Section order mirrors .bash_profile_cfg.
+
+# ──────────────────────────────────────────────────────
+# macOS: Homebrew (only when running on macOS)
+# Must come first so brew-installed tools (starship,
+# keychain, ...) are on PATH for everything below.
+# ──────────────────────────────────────────────────────
+
+if [[ -x "/opt/homebrew/bin/brew" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # ──────────────────────────────────────────────────────
 # Pyenv — login-shell PATH setup
-# Must come before sourcing .zshrc so pyenv shims are
-# on PATH when .zshrc runs `pyenv init`.
+# Must come before .zshrc so pyenv shims are on PATH
+# when .zshrc runs `pyenv init`.
 # ──────────────────────────────────────────────────────
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -15,11 +26,3 @@ export PYENV_ROOT="$HOME/.pyenv"
 # ──────────────────────────────────────────────────────
 
 [[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
-
-# ──────────────────────────────────────────────────────
-# macOS: Homebrew (only when running on macOS)
-# ──────────────────────────────────────────────────────
-
-if [[ -x "/opt/homebrew/bin/brew" ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
