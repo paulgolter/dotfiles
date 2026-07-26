@@ -1,4 +1,5 @@
-if status --is-interactive
-    eval (ssh-agent -c)
+# keychain manages ssh-agent reuse across sessions — no need to
+# spawn ssh-agent ourselves.
+if status --is-interactive; and type -q keychain
     eval (keychain --eval --agents ssh github.com gitlab.com)
 end

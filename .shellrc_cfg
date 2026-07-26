@@ -1,6 +1,6 @@
 # ~/.shellrc_cfg — Shared interactive shell configuration
 # Sourced by both .bashrc_cfg and .zshrc_cfg.
-# Contains only POSIX-compatible or universally supported constructs.
+# Uses only constructs supported by both bash and zsh.
 
 # ──────────────────────────────────────────────────────
 # PATH
@@ -15,7 +15,9 @@
 # regardless of which shell launched this session (e.g. fish).
 # ──────────────────────────────────────────────────────
 
-eval "$(SHELL=/bin/sh keychain --eval --agents ssh github.com gitlab.com)"
+if command -v keychain &>/dev/null; then
+    eval "$(SHELL=/bin/sh keychain --eval --agents ssh github.com gitlab.com)"
+fi
 
 # ──────────────────────────────────────────────────────
 # ALIASES
@@ -45,14 +47,14 @@ cloneconfig() {
     sh "$HOME/.install/install_config.sh"
 }
 
-# Clipboard shortcuts (requires xclip)
-toclip() {
-    xclip -selection c "$@"
-}
-
-fromclip() {
-    xclip -selection c -o "$@"
-}
+# Clipboard shortcuts (xclip on Linux, pbcopy/pbpaste on macOS)
+if command -v pbcopy &>/dev/null; then
+    toclip() { pbcopy "$@"; }
+    fromclip() { pbpaste "$@"; }
+else
+    toclip() { xclip -selection c "$@"; }
+    fromclip() { xclip -selection c -o "$@"; }
+fi
 
 # ──────────────────────────────────────────────────────
 # STARTUP
