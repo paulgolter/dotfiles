@@ -5,11 +5,11 @@ set -euo pipefail
 # Run this before anything else to deploy your shell configs.
 #
 #   sudo apt install git
-#   git clone --bare git@github.com:paulgolter/dotfiles.git ~/.cfg
 #   sh ~/.install/install_config.sh
 #
-# install_config.sh checks out all dotfiles, backs up any conflicts, and
-# wires up ~/.bashrc / ~/.bash_profile / ~/.zprofile to source the _cfg files.
+# install_config.sh clones the bare repo, checks out all dotfiles (exits if
+# there are conflicting files, resolve them manually), and wires up
+# ~/.bashrc / ~/.bash_profile / ~/.zshrc / ~/.zprofile to source the _cfg files.
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Setup git bare repository
