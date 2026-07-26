@@ -2,23 +2,15 @@
 set -euo pipefail
 
 # ── Step 0: Bootstrap dotfiles ────────────────────────────────────────────────
-# Run this before anything else to deploy your shell configs.
+# Run this before anything else to deploy your shell configs (see README.md):
 #
 #   sudo apt install git
-#   sh ~/.install/install_config.sh
+#   curl -fsSL https://raw.githubusercontent.com/paulgolter/dotfiles/master/.install/install_config.sh | sh
 #
 # install_config.sh clones the bare repo, checks out all dotfiles (exits if
 # there are conflicting files, resolve them manually), and wires up
 # ~/.bashrc / ~/.bash_profile / ~/.zshrc / ~/.zprofile to source the _cfg files.
 # ─────────────────────────────────────────────────────────────────────────────
-
-# Setup git bare repository
-# https://www.atlassian.com/git/tutorials/dotfiles
-# echo ".cfg" >> .gitignore
-# git clone --bare git@github.com:paulgolter/dotfiles.git $HOME/.cfg
-# alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-# config checkout
-# config config --local status.showUntrackedFiles no
 
 # Keychain
 sudo apt install keychain
@@ -28,7 +20,7 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install neovim -y
 
-# Open neovim and run :MasonInstallAl
+# Open neovim and run :MasonInstallAll
 # https://nvchad.com/docs/quickstart/install
 
 
@@ -60,7 +52,7 @@ sudo apt install eza -y
 
 # Bat (Nicer version of cat)
 sudo apt install bat -y
-# Might be necesaary on some distros:
+# Might be necessary on some distros:
 # mkdir -p ~/.local/bin
 # ln -s /usr/bin/batcat ~/.local/bin/bat
 
@@ -73,7 +65,7 @@ sudo apt install fzf -y
 # Midnight commander
 sudo apt install mc -y
 
-# Ripgrep, faster then grep more features
+# Ripgrep, faster than grep with more features
 sudo apt install ripgrep -y
 
 # diff-so-fancy

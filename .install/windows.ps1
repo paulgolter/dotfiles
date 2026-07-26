@@ -1,4 +1,4 @@
-# Install latest power shell
+# Install latest PowerShell
 winget install --id Microsoft.Powershell --source winget
 
 # Install 'Windows Terminal' from store
@@ -42,11 +42,11 @@ wsl --install
 # Blender
 winget install -e --id BlenderFoundation.Blender
 
-# Git autcomplete for powershell
+# Git autocomplete for PowerShell
 # https://github.com/dahlbyk/posh-git
 Install-Module posh-git -Scope CurrentUser -Force -AllowClobber -AllowPrerelease
 
-# Setup powershell profle, copy from .config/windows
+# Setup PowerShell profile: copy .config/windows/Microsoft.PowerShell_profile.ps1 to $profile
 
 # ffmpeg
 choco install ffmpeg

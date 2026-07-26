@@ -8,8 +8,8 @@
 # What this script does:
 #   1. Clones the bare dotfiles repo to ~/.cfg (skips if already present)
 #   2. Checks out dotfiles; exits with a clear message if there are conflicts
-#   3. Creates ~/.bashrc, ~/.bash_profile and ~/.zprofile if missing, then
-#      appends a source line for the respective _cfg file to each (idempotent)
+#   3. Creates ~/.bashrc, ~/.bash_profile, ~/.zshrc and ~/.zprofile if missing,
+#      then appends a source line for the respective _cfg file to each (idempotent)
 
 set -eu
 
