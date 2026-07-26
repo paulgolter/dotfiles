@@ -33,26 +33,32 @@ if type -q starship
     starship init fish | source
 end
 
-# Xlip Copy to clipboard shorcuts.
-function toclip -d "Copy to Clipboard"
-    xclip -selection c $argv
-end
+# Clipboard shortcuts (xclip on Linux, pbcopy/pbpaste on macOS)
+if type -q pbcopy
+    function toclip -d "Copy to Clipboard"
+        pbcopy $argv
+    end
 
-function fromclip -d "Paste from Clipboard"
-    xclip -selection c -o $argv
+    function fromclip -d "Paste from Clipboard"
+        pbpaste $argv
+    end
+else
+    function toclip -d "Copy to Clipboard"
+        xclip -selection c $argv
+    end
+
+    function fromclip -d "Paste from Clipboard"
+        xclip -selection c -o $argv
+    end
 end
 
 # Environment Variables
-#Poetry
 if test -d ~/.local/bin
-    contains ~/.local/bin $fish_user_paths; or set -Ua fish_user_paths ~/.local/bin
+    fish_add_path ~/.local/bin
 end
 
-# Starship terminal prompt
-# (kept here; duplicate block below was removed)
-
 # Pyenv
-if command -v pyenv
+if command -q pyenv
     pyenv init - fish | source
 end
 
