@@ -13,15 +13,18 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d "$PYENV_ROOT/bin" ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
 # ──────────────────────────────────────────────────────
-# Source .bashrc for interactive configuration
-# ──────────────────────────────────────────────────────
-
-[[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
-
-# ──────────────────────────────────────────────────────
 # macOS: Homebrew (only when running on macOS)
+# Must come before sourcing .bashrc so brew-installed
+# tools (starship, keychain, ...) are on PATH when
+# .bashrc_cfg initialises them.
 # ──────────────────────────────────────────────────────
 
 if [[ -x "/opt/homebrew/bin/brew" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
+# ──────────────────────────────────────────────────────
+# Source .bashrc for interactive configuration
+# ──────────────────────────────────────────────────────
+
+[[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
