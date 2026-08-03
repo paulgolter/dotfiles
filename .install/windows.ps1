@@ -25,6 +25,10 @@ pipx ensurepath
 pipx install poetry
 pipx ensurepath
 
+
+# uv 
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
 # Vscode
 winget install -e --id Microsoft.VisualStudioCode
 
@@ -56,6 +60,9 @@ choco install ffmpeg
 winget install -e --id CoreyButler.NVMforWindows
 nvm install 20
 nvm use 20
+
+# ripgrep
+winget install BurntSushi.ripgrep.MSVC
 
 # Setup ssh-keys
 # Setup ssh-agent: https://www.notion.so/SSH-454e27eec5ee4a2e987bf306b7965b61
