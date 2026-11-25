@@ -1,85 +1,92 @@
-# Install latest PowerShell
-winget install --id Microsoft.Powershell --source winget
+# Windows dev setup
+# Run as a normal (non-admin) user:
+#   powershell -ExecutionPolicy Bypass -File .\windows-setup.ps1
+# Elevated steps are batched at the end behind a single UAC prompt.
 
-# Install 'Windows Terminal' from store
-# https://apps.microsoft.com/detail/9n0dx20hk701?rtc=1&hl=de-de&gl=DE
+function Update-SessionPath {
+  $env:Path = [Environment]::GetEnvironmentVariable('Path', 'Machine') + ';' +
+              [Environment]::GetEnvironmentVariable('Path', 'User')
+}
 
-# Install pyenv
-Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+# ----------------------------------
+# Packages (winget)
+# Git for Windows also gives Claude Code its Bash tool (Git Bash)
+# Machine-wide installers (Git, 7-Zip, ...) raise their own UAC prompt
+# ----------------------------------
+$pkgs = @(
+  # Shell / terminal
+  'Microsoft.PowerShell'
+  'Microsoft.WindowsTerminal'
 
-# Choco
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+  # CLI toolbelt
+  'Git.Git'
+  'BurntSushi.ripgrep.MSVC'
+  'sharkdp.fd'
+  'jqlang.jq'
+  'MikeFarah.yq'
+  'GitHub.cli'
+  '7zip.7zip'
+  'ezwinports.make'
+  'Gyan.FFmpeg'
 
-# Scoop
-# If scoop installed as admin refer: https://github.com/ScoopInstaller/Install?tab=readme-ov-file#for-admin
-iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
-# Non admin:
-# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-# Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+  # Languages
+  'astral-sh.uv'
+  'CoreyButler.NVMforWindows'
 
-# Pipx
-scoop install pipx
-pipx ensurepath
+  # Editors / apps
+  'Microsoft.VisualStudioCode'
+  'Neovim.Neovim'
+  'BlenderFoundation.Blender'
+)
+foreach ($p in $pkgs) {
+  winget install --id $p --exact --source winget --accept-package-agreements --accept-source-agreements
+}
+Update-SessionPath
 
-# Poetry
-pipx install poetry
-pipx ensurepath
+# ----------------------------------
+# Python (uv manages interpreters and tools)
+# ----------------------------------
+# uv python install 3.11
+# uv tool install <tool>
 
+# ----------------------------------
+# Node (nvm-windows)
+# ----------------------------------
+nvm install lts
 
-# uv 
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-# Vscode
-winget install -e --id Microsoft.VisualStudioCode
-
-# Git
-winget install -e --id Git.Git
-
-# Neovim
-winget install -e --id Neovim.Neovim
-
-# WSL
-# Open a admin power shell and run
-wsl --install
-# --> needs reboot
-
-# Blender
-winget install -e --id BlenderFoundation.Blender
-
-# Git autocomplete for PowerShell
-# https://github.com/dahlbyk/posh-git
-Install-Module posh-git -Scope CurrentUser -Force -AllowClobber -AllowPrerelease
+# ----------------------------------
+# PowerShell 7 modules
+# Run through pwsh so the module lands in the PowerShell 7 module path
+# ----------------------------------
+# Git autocomplete: https://github.com/dahlbyk/posh-git
+pwsh -NoProfile -Command "Install-Module posh-git -Scope CurrentUser -Force -AllowClobber"
 
 # Setup PowerShell profile: copy .config/windows/Microsoft.PowerShell_profile.ps1 to $profile
 
-# ffmpeg
-choco install ffmpeg
+# ----------------------------------
+# Elevated steps (one UAC prompt)
+# - nvm use: nvm-windows creates a symlink, needs admin
+# - wsl --install: needs a reboot afterwards, so it runs last
+# ----------------------------------
+Start-Process powershell -Verb RunAs -Wait -ArgumentList @(
+  '-NoProfile', '-Command',
+  'nvm use newest; wsl --install; Read-Host "Done. Reboot to finish WSL setup. Press Enter to close"'
+)
 
-# Nvm for windows
-# https://github.com/coreybutler/nvm-windows/releases
-winget install -e --id CoreyButler.NVMforWindows
-nvm install 20
-nvm use 20
-
-# ripgrep
-winget install BurntSushi.ripgrep.MSVC
-
-# Setup ssh-keys
-# Setup ssh-agent: https://www.notion.so/SSH-454e27eec5ee4a2e987bf306b7965b61
-# Setup gitconfig
-
-# Path Copy
-# https://github.com/clechasseur/pathcopycopy/releases
-
+# ----------------------------------
+# Manual steps
+# ----------------------------------
+# SSH keys
+# ssh-agent: https://www.notion.so/SSH-454e27eec5ee4a2e987bf306b7965b61
+# gitconfig
+# GitHub CLI login: gh auth login
+#
+# Path Copy: https://github.com/clechasseur/pathcopycopy/releases
+#
 # Maxon App
 # Autodesk Access
 # SideFX Launcher
 # Adobe Creative Cloud
-
+#
 # Themes
-# ----------------------------------
-
-# Terminal catppuccin theme
-
-# https://github.com/catppuccin/windows-terminal
-
+# Windows Terminal catppuccin: https://github.com/catppuccin/windows-terminal
